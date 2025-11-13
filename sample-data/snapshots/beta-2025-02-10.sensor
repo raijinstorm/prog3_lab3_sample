@@ -1,0 +1,13 @@
+# sensor snapshot
+sensor=weather-beta
+timestamp=2025-02-10T09:05:00Z
+site=warehouse
+
+[measurements]
+temperature=18.9
+humidity=55
+co2=420
+
+[diagnostics]
+battery=88
+signal=-65
