@@ -6,9 +6,7 @@ public static class ProjectPaths
 {
     public static DirectoryInfo RepositoryRoot { get; } = ResolveRepoRoot();
 
-    public static DirectoryInfo LabRoot { get; } = new(Path.Combine(
-        RepositoryRoot.FullName,
-        "lab3_gpt_task"));
+    public static DirectoryInfo LabRoot { get; } = RepositoryRoot;
 
     public static DirectoryInfo SampleDataRoot { get; } = EnsureDirectory(
         Path.Combine(LabRoot.FullName, "sample-data"));
@@ -40,12 +38,12 @@ public static class ProjectPaths
     {
         var dir = new DirectoryInfo(AppContext.BaseDirectory);
 
-        while (dir is not null && !Directory.Exists(Path.Combine(dir.FullName, "lab3_gpt_task")))
+        while (dir is not null && !File.Exists(Path.Combine(dir.FullName, "FileIngestionLab.sln")))
         {
             dir = dir.Parent;
         }
 
-        return dir ?? throw new UnreachableException("Unable to locate lab3_gpt_task folder.");
+        return dir ?? throw new UnreachableException("Unable to locate FileIngestionLab.sln.");
     }
 
     private static DirectoryInfo EnsureDirectory(string path)
