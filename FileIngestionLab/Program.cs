@@ -1,6 +1,7 @@
 ﻿//#define DEMO_MONITOR
 //#define DEMO_ARCHIVE
 
+using FileIngestionLab.Domain;
 using FileIngestionLab.Monitoring;
 using FileIngestionLab.Pipelines;
 using FileIngestionLab.Processing;
